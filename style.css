@@ -1,0 +1,128 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url('images/universe.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-shadow: 1px 1px 5px white;
+}
+
+.center{
+    width: 100%;
+}
+
+.top{
+    width: 100%;
+    height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.left{
+    flex-basis: 50%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.left-item{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 110px;
+    font-weight: 600;
+    color: white;
+}
+
+.text{
+    margin-top: 10vh;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+
+.right{
+    position: sticky;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    flex-basis: 50%;
+}
+
+.item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.25s;
+    transform: scale(0.3);
+}
+
+.item::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(6px) saturate(200%);
+    -webkit-backdrop-filter: blur(6px) saturate(200%);
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    z-index: -1;
+}
+
+.item.active{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.item img{
+    height: 65%;
+    filter: drop-shadow(1px 1px 100px gray);
+}
+
+.item button{
+    background: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    border-radius: 7mm;
+    margin-top: 50px;
+}
